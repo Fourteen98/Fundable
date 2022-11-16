@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# font awesome
+# gem "font-awesome-rails", "~> 6.2.1"
+
 # devise gem
 gem 'devise'
 
@@ -81,4 +84,4 @@ group :test do
   gem 'webdrivers'
 end
 
-gem "tailwindcss-rails", "~> 2.0"
+gem 'tailwindcss-rails', '~> 2.0'
