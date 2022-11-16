@@ -28,7 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_123723) do
     t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "author_id", null: false
+    t.bigint "author_id"
     t.index ["author_id"], name: "index_groups_on_author_id"
   end
 
@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_123723) do
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "author_id", null: false
+    t.bigint "author_id"
     t.index ["author_id"], name: "index_purchases_on_author_id"
   end
 
@@ -62,6 +62,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_123723) do
 
   add_foreign_key "group_purchases", "groups"
   add_foreign_key "group_purchases", "purchases"
-  add_foreign_key "groups", "users", column: "author_id"
-  add_foreign_key "purchases", "users", column: "author_id"
 end
