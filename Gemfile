@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# devise gem
+gem 'devise'
+
 # rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
 
