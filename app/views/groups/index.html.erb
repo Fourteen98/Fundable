@@ -1,6 +1,6 @@
-<section class="h-full w-full bg-white min-h-screen">
+<section class="h-full w-full bg-white min-h-screen flex flex-col gap-4">
   <%= render "layouts/sidebar" %>
-  <div class="flex flex-col w-full justify-center px-4 py-4 gap-4 ">
+  <div class="h-4/5 flex flex-col w-full justify-center px-4 py-4 gap-4 overflow-y-scroll border-2">
     <% @groups.each do |group| %>
       <div class="block rounded-lg shadow-lg bg-white w-full text-center border-2 flex gap-4 p-4">
         <div class="w-24 border-2">
