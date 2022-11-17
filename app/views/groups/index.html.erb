@@ -1,0 +1,27 @@
+<section class="h-full w-full bg-white min-h-screen">
+  <%= render "layouts/sidebar" %>
+  <div class="flex flex-col w-full justify-center px-4 py-4 gap-4 ">
+    <% @groups.each do |group| %>
+      <div class="block rounded-lg shadow-lg bg-white w-full text-center border-2 flex gap-4 p-4">
+        <div class="w-24 border-2">
+          <%= image_tag group.icon, :alt => 'user-logo', class: 'rounded-l w-24' %>
+        </div>
+        <div class="w-3/4 flex flex-col gap-8">
+          <div class="flex  items-center justify-between gap-12 py-4">
+            <h1 class="text-2xl font-bold text-gray-800 hover:text-main-text ">
+              <%= group.name %>
+            </h1>
+            <h5 class="text-2xl font-bold text-gray-900">$400</h5>
+          </div>
+          <div class="flex text-gray-400">
+            <p>Created: </p>
+            <%= time_ago_in_words group.updated_at %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="fixed bottom-0 right-0 w-full bg-main-second text-white  shadow-lg  p-4 flex items-center justify-center">
+    <%= link_to "Add A Group", new_group_path, class: " w-full flex items-center justify-center p-8 border-2 rounded-md text-2xl" %>
+  </div>
+</section>

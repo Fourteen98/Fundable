@@ -14,3 +14,12 @@
  *= require_self
  */
 @import "font-awesome";
+
+/* class active */
+.active {
+    display: flex;
+}
+
+.non-active {
+    display: none;
+}
