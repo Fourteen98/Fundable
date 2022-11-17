@@ -12,10 +12,12 @@
   </head>
 
   <body class="font-nova h-screen">
-    <% if user_signed_in? %>
+    <% if user_signed_in? and controller_name  == 'groups' and controller.action_name == 'index' %>
       <%= render "layouts/nav" %>
-
+    <% else %>
+      <%= render "layouts/other_nav" %>
     <% end %>
+
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
