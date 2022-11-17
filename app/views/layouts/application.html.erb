@@ -11,7 +11,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="font-nova min-h-full">
+  <body class="font-nova h-screen">
+    <% if user_signed_in? %>
+      <%= render "layouts/nav" %>
+
+    <% end %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

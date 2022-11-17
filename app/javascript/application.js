@@ -2,3 +2,17 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "@fortawesome/fontawesome-free"
+
+const menu = document.getElementById('side-menu');
+
+menu.addEventListener('click', () => {
+    if (document.getElementById('sidenavSecExample').classList.contains('active')) {
+        document.getElementById('sidenavSecExample').classList.remove('active');
+        document.getElementById('sidenavSecExample').classList.add('non-active');
+
+    } else {
+        document.getElementById('sidenavSecExample').classList.remove('non-active');
+        document.getElementById('sidenavSecExample').classList.add('active');
+
+    }
+});
