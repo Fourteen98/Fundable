@@ -2,23 +2,23 @@
   <%= render "layouts/sidebar" %>
   <div class="h-4/5 flex flex-col w-full items-center px-4 py-4 gap-4 overflow-y-scroll border-2">
     <% @groups.each do |group| %>
-      <div class="block rounded-lg shadow-lg bg-white w-full text-center border-2 flex gap-4 p-4">
-        <div class="w-24 border-2">
-          <%= image_tag group.icon, :alt => 'user-logo', class: 'rounded-l w-24' %>
-        </div>
-        <div class="w-3/4 flex flex-col gap-8">
-          <div class="flex  items-center justify-between gap-12 py-4">
-            <h1 class="text-2xl font-bold text-gray-800 hover:text-main-text ">
-              <%= group.name %>
-            </h1>
-            <h5 class="text-2xl font-bold text-gray-900">$400</h5>
+
+        <div class="block rounded-lg shadow-lg bg-white w-full text-center border-2 flex gap-4 p-4">
+          <div class="w-24 border-2">
+            <%= image_tag group.icon, :alt => 'user-logo', class: 'rounded-l w-24' %>
           </div>
-          <div class="flex text-gray-400">
-            <p>Created: </p>
-            <%= time_ago_in_words group.updated_at %>
+          <div class="w-3/4 flex flex-col gap-8">
+            <div class="flex  items-center justify-between gap-12 py-4">
+              <h1 class="text-2xl font-bold text-gray-800 hover:text-main-text ">
+                <%= link_to group.name,group_purchases_path(group)%>
+              </h1>
+              <h5 class="text-2xl font-bold text-gray-900">$<%= @total_amount[group.name]%></h5>
+            </div>
+            <div class="flex text-gray-400 text-sm">
+              <p>Created: <%= time_ago_in_words group.updated_at %> ago</p>
+            </div>
           </div>
         </div>
-      </div>
     <% end %>
   </div>
   <div class="fixed bottom-0 right-0 w-full bg-main-second text-white  shadow-lg  p-4 flex items-center justify-center">
