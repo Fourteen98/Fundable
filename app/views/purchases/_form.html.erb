@@ -1,15 +1,20 @@
-<%= form_with model: @group, url: groups_path do |f| %>
+<%= form_with model: @purchases, url: group_purchases_path do |f| %>
   <div class="mb-4">
-    <%= f.text_field :name, placeholder: 'Group Name',class:"form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+    <%= f.text_field :name, placeholder: 'Purchase Name',class:"form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
     %>
   </div>
 
   <div class="mb-4">
-    <%= f.text_field :icon, placeholder: 'Icon Url',class:"form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+    <%= f.number_field :amount, placeholder: 'Amount',class:"form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
     %>
   </div>
+
+  <div>
+    <%= f.collection_select(:group_ids, Group.where(author_id: current_user), :id, :name, {}, {:multiple => true, class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" }) %>
+  </div>
+
 
   <div class="fixed bottom-0 right-0 w-full bg-main-second text-white  shadow-lg  p-4 flex items-center justify-center">
-    <%= f.submit "Create Group", class: " w-full flex items-center justify-center p-8 border-2 rounded-md text-2xl" %>
+    <%= f.submit "Add Purchase", class: " w-full flex items-center justify-center p-8 border-2 rounded-md text-2xl" %>
   </div>
 <% end %>

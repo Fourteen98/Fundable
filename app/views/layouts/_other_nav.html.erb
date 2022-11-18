@@ -1,8 +1,23 @@
 <div class=" w-full h-12 border-2 flex items-center bg-main  p-2 text-white">
   <div class="w-1/2">
-    <%= link_to  :back do %>
-      <i class="fa-solid fa-arrow-left text-3xl text-white"></i>
-    <%end %>
+    <% if controller_name == "groups" and controller.action_name == "new" %>
+      <%= link_to :back do %>
+        <i class="fa-solid fa-arrow-left text-3xl text-white"></i>
+      <%end %>
+    <% end %>
+
+    <% if controller_name == "purchases" and controller.action_name == "index" %>
+      <%= link_to groups_path do %>
+        <i class="fa-solid fa-arrow-left text-3xl text-white"></i>
+      <%end %>
+    <% end %>
+
+    <% if controller_name == "purchases" and controller.action_name == "new" %>
+      <%= link_to :back do %>
+        <i class="fa-solid fa-arrow-left text-3xl text-white"></i>
+      <%end %>
+    <% end %>
+
   </div>
   <div class="w-1/2">
     <% if controller.action_name == 'index' %>

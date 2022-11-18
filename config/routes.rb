@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   # get 'categories/new'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   # devise
   devise_for :users
 

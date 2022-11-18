@@ -5,7 +5,9 @@ class GroupsController < ApplicationController
     # get total amount of purchases for each group
     @total_amount = {}
     @groups.each do |group|
-      @total_amount[group.name] = Purchase.joins(:group_purchases).where(group_purchases: { group_id: group.id }).where(author_id: current_user.id).sum(:amount)
+      @total_amount[group.name] =
+        Purchase.joins(:group_purchases).where(group_purchases: { group_id: group.id })
+          .where(author_id: current_user.id).sum(:amount)
     end
   end
 
