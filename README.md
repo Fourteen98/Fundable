@@ -10,8 +10,8 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 - Git clone the repository.
 - Run `bundle install`
-- Run `rails s`
-
+- Run `bin/dev`
+> Kindly Note when using `rails s` you wont be having the styling working
 ## Authors
 
 👤 **Muhyideen Elias**
