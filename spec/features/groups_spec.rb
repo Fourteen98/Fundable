@@ -13,7 +13,9 @@ RSpec.describe 'Categories page', type: :feature do
     fill_in 'Password', with: @user.password.to_s
     find("input[type='submit']").click
 
-    @group = Group.new(name: 'Travel', icon: 'https://png.pngtree.com/png-clipart/20220626/original/pngtree-plane-travel-logo-vector-template-png-image_8185591.png', author_id: 1)
+    @group = Group.new(name: 'Travel',
+                       icon: 'https://png.pngtree.com/png-clipart/20220626
+  /original/pngtree-plane-travel-logo-vector-template-png-image_8185591.png', author_id: 1)
     @group.author_id = @user.id
     @group.save
   end
@@ -42,5 +44,4 @@ RSpec.describe 'Categories page', type: :feature do
     click_on 'Add A Group'
     expect(current_path).to eq(new_group_path)
   end
-
 end
