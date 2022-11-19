@@ -10,7 +10,8 @@ menu.addEventListener('click', () => {
         document.getElementById('sidenavSecExample').classList.remove('active');
         document.getElementById('sidenavSecExample').classList.add('non-active');
 
-    } else {
+    }
+    else if (document.getElementById('sidenavSecExample').classList.contains('non-active')) {
         document.getElementById('sidenavSecExample').classList.remove('non-active');
         document.getElementById('sidenavSecExample').classList.add('active');
 

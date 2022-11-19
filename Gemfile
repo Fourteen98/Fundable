@@ -64,6 +64,10 @@ group :development, :test do
   # Use better_errors
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -85,3 +89,5 @@ group :test do
 end
 
 gem 'tailwindcss-rails', '~> 2.0'
+
+gem 'ffi'
