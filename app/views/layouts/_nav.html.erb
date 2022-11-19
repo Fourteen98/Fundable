@@ -6,5 +6,6 @@
   <% if controller_name == 'purchases'%>
     <h1 class="text-2xl font-bold">Purchases</h1>
   <%end %>
-  <i class="fa-solid fa-magnifying-glass text-3xl text-white"></i>
+  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"text-white"%>
+
 </div>
